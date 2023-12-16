@@ -40,7 +40,7 @@ export class DataverseAuthArgs {
   }
 
   public outputHelp() {
-    console.log(`Usage: npx dataverse-auth [EnvUrl] [test-connection] [remove] [list] [device-code]
+    console.log(`Usage: npx d365-connect [EnvUrl] [test-connection] [remove] [list] [device-code]
     
     [EnvUrl]            The url of the environment to authenticate against (e.g. contoso.dynamics.com)
     test-connection     Tests a pre-created authentication profile using the environment url as the key

@@ -27,7 +27,7 @@ let msalClient: PublicClientApplication | undefined;
 
 function getLookupPath(): string {
   const homeDirPath = os.homedir();
-  return path.join(homeDirPath, "./dataverse-auth-users");
+  return path.join(homeDirPath, "./d365-connect-users");
 }
 
 function loadLookup(): UserLookup {
@@ -229,7 +229,7 @@ export async function acquireToken(environmentUrl: string, logger?: ILoggerCallb
   const accounts = await client.getTokenCache().getAllAccounts();
   // Find the account for the given environment
   const account = getAccountByEnvUrl(accounts, envUrl);
-  if (!account) throw "Cannot find profile for environment. Re-run npx dataverse-auth for this environment.";
+  if (!account) throw "Cannot find profile for environment. Re-run npx d365-connect for this environment.";
 
   const scopes = ["openid", `https://${envUrl}/.default`];
   const response = await client.acquireTokenSilent({ account: account, scopes: scopes } as SilentFlowRequest);

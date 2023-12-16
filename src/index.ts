@@ -21,11 +21,11 @@ process.setUncaughtExceptionCaptureCallback((error) => {
 });
 
 if (!argEnvUrl) {
-  throw "Please supply an environment url. E.g. npx dataverse-auth contoso.crm.dynamics.com";
+  throw "Please supply an environment url. E.g. npx d365-connect contoso.crm.dynamics.com";
 }
-// This is called via the bin command dataverse-auth
+// This is called via the bin command d365-connect
 // Either <tenantUrl> <environmentUrl> can be provided
-// Or just <environmentUrl> and we lookup the <tenantUrl>
+// Or just <environmentUrl> and we look up the <tenantUrl>
 
 // eslint-disable-next-line @typescript-eslint/no-use-before-define
 interactiveAcquireAuthCode(logger.Log, argEnvUrl, argTenant)

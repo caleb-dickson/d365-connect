@@ -5,14 +5,14 @@ import os from "os";
 import path from "path";
 import Cryptr from "cryptr";
 
-// This is a encrypted auth token cache
-// IDeally we should use msal-node-extensions to provide a secure storage of tokens
+// This is an encrypted auth token cache
+// Ideally we should use msal-node-extensions to provide a secure storage of tokens
 // See https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-node-migration#enable-token-caching
 // However - this library does not come with pre-compiled native libraries
 // See https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/3332
 function getAuthCachePath(): string {
   const homeDirPath = os.homedir();
-  return path.join(homeDirPath, "dataverse-auth-cache");
+  return path.join(homeDirPath, "d365-connect-cache");
 }
 
 function getCrypto(): Cryptr {

@@ -1,11 +1,11 @@
 {
   "name": "d365-connect",
-  "version": "1.0.7",
+  "version": "2.0.7",
   "description": "Performs auth against a Microsoft Dataverse environment. Stores the token for use in other NodeJS applications. Forked from Scott Durow's dataverse-auth.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "dataverse-auth": "dist/dataverse-auth.js"
+    "d365-connect": "dist/d365-connect.js"
   },
   "scripts": {
     "build": "tsc",
@@ -13,7 +13,7 @@
     "prepublishOnly": "npm version patch",
     "version": "genversion --es6 --semi --double src/version.ts && npm run build && git add src/version.ts",
     "postversion": "git push && git push --tags",
-    "start": "tsc & node dist/dataverse-auth.js",
+    "start": "tsc & node dist/d365-connect.js",
     "electron": "tsc & electron .",
     "genversion": "genversion",
     "lint": "eslint src --ext .ts",

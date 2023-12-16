@@ -18,14 +18,7 @@ import { SimpleLogger } from "./MsalAuth/SimpleLogger";
 import chalk from "chalk";
 import { DataverseAuthArgs, DataverseAuthCommands } from "./DataverseAuthArgs";
 
-console.log(chalk.yellow(`dataverse-auth v${version}`));
-console.log(
-  chalk.yellow(`
-  NOTE: `) +
-    chalk.gray(`Version 2 of dataverse-auth is not compatible with version Version 1 of dataverse-ify and dataverse-gen.
-  Use npx dataverse-auth@1 instead if you want to continue to use the older version.
-  `),
-);
+console.log(chalk.yellow(`d365-connect v${version}`));
 
 const currentDir = __dirname;
 

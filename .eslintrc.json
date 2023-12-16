@@ -23,7 +23,7 @@
       "prettier",
       "sonarjs"
   ],
-  "ignorePatterns": ["**/generated/*.ts"],
+  "ignorePatterns": ["**/generated/*.ts", "**/*.js"],
   "rules": {
       "eqeqeq": [2, "smart"],
       "prettier/prettier": "error",

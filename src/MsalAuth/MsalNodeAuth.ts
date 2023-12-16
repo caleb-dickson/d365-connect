@@ -21,6 +21,7 @@ import { MsalCachePlugin } from "./MsalCachePlugin";
 export interface UserLookup {
   [index: string]: string;
 }
+
 let userNameLookup: UserLookup | undefined;
 let msalClient: PublicClientApplication | undefined;
 
@@ -76,9 +77,11 @@ export function getAllUsers(): { userName: string; environment: string }[] {
     return { userName: lookup[environment], environment };
   });
 }
+
 function normalizeEnvUrl(environmentUrl: string) {
   return environmentUrl.toLowerCase().trim().replace(/\/$/, "");
 }
+
 export function getAccountByEnvUrl(accounts: AccountInfo[], environmentUrl: string): AccountInfo | undefined {
   const user = getUserNameByEnvUrl(normalizeEnvUrl(environmentUrl));
   if (user) {
@@ -215,7 +218,7 @@ export async function removeToken(environmentUrl: string): Promise<void> {
   const accounts = await client.getTokenCache().getAllAccounts();
   const account = getAccountByEnvUrl(accounts, envUrl);
   if (!account) throw "Cannot find profile for environment.";
-  client.getTokenCache().removeAccount(account);
+  client.getTokenCache().removeAccount(account).catch(console.error);
   removeAccountByEnvUrl(envUrl);
 }
 
@@ -240,6 +243,7 @@ export async function acquireToken(environmentUrl: string, logger?: ILoggerCallb
     throw `Authentication for ${envUrl} was unsuccessful`;
   }
 }
+
 async function whoAmI(environmentUrl: string, response: AuthenticationResult): Promise<string> {
   const envUrl = normalizeEnvUrl(environmentUrl);
   const whoAmIResponse = await fetch(`https://${envUrl}/api/data/v9.2/WhoAmI()`, {

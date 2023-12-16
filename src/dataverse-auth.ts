@@ -17,6 +17,7 @@ import { prompt } from "enquirer";
 import { SimpleLogger } from "./MsalAuth/SimpleLogger";
 import chalk from "chalk";
 import { DataverseAuthArgs, DataverseAuthCommands } from "./DataverseAuthArgs";
+
 console.log(chalk.yellow(`dataverse-auth v${version}`));
 console.log(
   chalk.yellow(`

@@ -1,5 +1,6 @@
 /* eslint-disable sonarjs/cognitive-complexity */
 import minimist from "minimist";
+
 export enum DataverseAuthCommands {
   TestConnection = "test-connection",
   List = "list",
@@ -8,6 +9,7 @@ export enum DataverseAuthCommands {
   ClientSecretAuth = "client-secret-auth",
   Help = "help",
 }
+
 const commands: string[] = [
   DataverseAuthCommands.List,
   DataverseAuthCommands.TestConnection,

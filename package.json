@@ -1,7 +1,6 @@
 {
   "name": "@caleb-dickson/d365-connect",
   "version": "1.0.12",
-  "private": true,
   "description": "Performs auth against a Microsoft Dataverse environment. Stores the token for use in other NodeJS applications. Forked from Scott Durow's dataverse-auth.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +10,6 @@
   "scripts": {
     "build": "tsc",
     "dist": "genversion --es6 --semi src/version.ts & tsc",
-    "prepublishOnly": "npm version patch",
     "version": "genversion --es6 --semi --double src/version.ts && npm run build && git add src/version.ts",
     "postversion": "git push && git push --tags",
     "start": "tsc & node dist/d365-connect.js",
